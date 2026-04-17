@@ -12,9 +12,6 @@ const MoviesCarousel = ({ movies }: CarouselProps) => {
   const carouselRef = useRef<ICarouselInstance>(null);
   const width = useWindowDimensions().width;
 
-
-
-
   return (
     <View className='h-[250px] w-full'>
       <Carousel 

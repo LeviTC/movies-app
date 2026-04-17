@@ -14,10 +14,10 @@ const MoviePoster = ({ id, poster, size = 'small', className }: MoviePosterProps
     >
       <Image 
         source={{ uri: poster }}
-        className='shadow-lg rounded-2xl w-full h-full'
+        className='rounded-2xl w-full h-full'
         style={{
           width: size === 'small' ? 85 : 150,
-          height: size === 'small' ? 130 : 250,
+          height: size === 'small' ? 130 : 240,
         }}
         resizeMode='cover'
       />
