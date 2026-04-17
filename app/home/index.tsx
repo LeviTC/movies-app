@@ -36,7 +36,11 @@ const HomeScreen = () => {
         <MovieHorizontalList movies={popularMovies} title='Popular' />
 
         {/* Top Rated Movies */}
-        <MovieHorizontalList movies={topRatedMovies} title='Top Rated' />
+        <MovieHorizontalList 
+          movies={topRatedMovies?.pages.flat() || []} 
+          title='Top Rated' 
+          loadMore={topRatedMoviesQuery.fetchNextPage}
+        />
 
         {/* Upcoming Movies */}
         <MovieHorizontalList movies={upcomingMovies} title='Upcoming' />
