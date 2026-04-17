@@ -1,4 +1,4 @@
-import { ActivityIndicator, Text, View } from 'react-native';
+import { ActivityIndicator, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
  
 import MovieHorizontalList from '@/presentation/components/Movies/MovieHorizontalList';
@@ -25,21 +25,23 @@ const HomeScreen = () => {
   const upcomingMovies = upcomingMoviesQuery.data;
 
   return (
-    <View style={{paddingTop: safeArea.top+10,}}>
-      <Text className='text-3xl font-bold px-4 '>Movies App</Text>
+    <ScrollView >
+      <View style={{paddingTop: safeArea.top+10,}} className='pb-10'>
+        <Text className='text-3xl font-bold px-4 '>Movies App</Text>
 
-      {/* Now Playing Movies */}
-      <MoviesCarousel movies={nowPlayingMoviesQuery.data || []} />
-      
-      {/* Popular Movies */}
-      <MovieHorizontalList movies={popularMovies} title='Popular' />
+        {/* Now Playing Movies */}
+        <MoviesCarousel movies={nowPlayingMoviesQuery.data || []} />
+        
+        {/* Popular Movies */}
+        <MovieHorizontalList movies={popularMovies} title='Popular' />
 
-      {/* Top Rated Movies */}
-      <MovieHorizontalList movies={topRatedMovies} title='Top Rated' />
+        {/* Top Rated Movies */}
+        <MovieHorizontalList movies={topRatedMovies} title='Top Rated' />
 
-      {/* Upcoming Movies */}
-      <MovieHorizontalList movies={upcomingMovies} title='Upcoming' />
-    </View>
+        {/* Upcoming Movies */}
+        <MovieHorizontalList movies={upcomingMovies} title='Upcoming' />
+      </View>
+    </ScrollView>
   );
 }
 
